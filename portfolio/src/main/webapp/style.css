@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+  }
+
 body {
     background-image:    url(images/background.jpg);
     background-size:     cover;                      
@@ -7,17 +11,63 @@ body {
 
 .display-1 {
     text-align: center;
-    padding: 125px;
-    color: #ffffff;
+    padding: 200px;
+    color: #15133C;
   }
 
 .display-8 {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: translateY(-400%);
-    color: #ffffff;
+    transform: translateY(-640%);
+    color: #15133C;
   }
+/* --------------------Animation Content---------------------*/
+.star img{
+    opacity: 0%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    transform: rotate(23deg);
+    width: 50px;
+    height: auto;
+    animation: star 1s linear infinite;
+}
+.star {
+    width:100%;
+    display:flex;
+    position: absolute;
+    right:-45%;
+    top: 7%;
+}
+@keyframes star{
+    0% {
+        transform: translate(300px, 10%);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        opacity:1;
+    }
+    100% {
+        transform: translateY(10vh);
+        opacity:0;
+    }
+}
+.star img:nth-child(1) {
+    animation-delay: 0.15s;
+}
+.star img:nth-child(2) {
+    animation-delay: 0.55s;
+}
+.star img:nth-child(3) {
+    animation-delay: 2s;
+}
+/* --------------------Animation Content End---------------------*/
+
+
+
 /*#greeting-container {
   margin-top: 20px;
 }*/
