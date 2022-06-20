@@ -47,6 +47,13 @@
     </dependency>
   </dependencies>
 
+<!--Datastore Dependency-->
+  <dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-datastore</artifactId>
+  <version>1.104.0</version>
+  </dependency>
+
   <build>
     <plugins>
       <!-- Copy static resources like html files into the output jar file. -->
