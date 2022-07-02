@@ -26,17 +26,13 @@ public class FormLoadServlet extends HttpServlet {
         Query.newEntityQueryBuilder().setKind("Task").build();
     QueryResults<Entity> results = datastore.run(query);
 
-while (results.hasNext()) {
-  Entity entity = results.next();
+    while (results.hasNext()) {
+    Entity entity = results.next();
 
-  long id = entity.getKey().getId();
-  String comment = entity.getString("input");
-
-}
+    long id = entity.getKey().getId();
+    String comment = entity.getString("input");
+    }
 
     Gson gson = new Gson();
-
-    response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(Task));
   }
-}
+} 
