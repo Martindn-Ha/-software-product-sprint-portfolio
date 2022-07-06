@@ -1,9 +1,75 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+html {
+    overflow-x: hidden;
+  }
+
+body.home {
+    background-image:    url(images/background.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center 15%;              
 }
 
-#greeting-container {
-  margin-top: 20px;
+.display-1 {
+    text-align: center;
+    padding: 200px;
+    color: #15133C;
+  }
+
+.display-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-640%);
+    color: #15133C;
+  }
+/* --------------------Animation Content---------------------*/
+.star img{
+    opacity: 0%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 50px;
+    height: auto;
+    animation: star 1s linear infinite;
 }
+.star {
+    width:100%;
+    display:flex;
+    position: absolute;
+    right:-45%;
+    top: 7%;
+}
+@keyframes star{
+    0% {
+        transform: translate(350px, -250px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    65%{
+        opacity:0;
+    }
+    70% {
+        opacity:1;
+    }
+    100% {
+        transform: translateY(15vh);
+        opacity:0;
+    }
+}
+.star img:nth-child(1) {
+    animation-delay: 1.07s;
+}
+.star img:nth-child(2) {
+    animation-delay: 3.67s;
+}
+/* --------------------Animation Content End---------------------*/
+
+
+
+/*#greeting-container {
+  margin-top: 20px;
+}*/
+
+
+

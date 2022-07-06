@@ -4,27 +4,27 @@
     <html>
       <head>
         <meta charset="UTF-8">
-        <title>Martin's Portfolio</title>
+        <title>Contact Me</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
             rel="stylesheet" 
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
             crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
-        <style>
-            h1 {text-align: center;}
-        </style>
         </head>
-        <body class = "home">
+        <body class ="contact">
             <!------------------Navigation Bar Content------------------->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid"> 
-                  <a class="navbar-brand" href="index.html">Home</a>
+                  <!---->
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                     <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                      </li>
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           About Me
@@ -39,64 +39,20 @@
                         <a class="nav-link" href="#">Resume</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">Projects</a>
                       </li>                      
                     </ul>
+                    <a class="navbar-brand" href="index.html">Contact</a>
                   </div>
                 </div>
               </nav>
-            <!-----------------Homepage Content-------------------------->
-            <div class="homepage">
-                <h1 class="display-1"><b>MARTIN HA</b></h1>
-                <h3 class="display-8"> CSUN Sophmore | Computer Science | Google SPS-er</h3>
-                <div style = "position: absolute; left: 640px; top: 400px;">
-                    <a href="https://github.com/Martindn-Ha">
-                        <img src="images/GitHub-Mark-Light-32px.png">
-                    </a>
-                </div>
-                <div style = "position: absolute; left: 765px; top: 400px;">
-                    <a href="https://www.linkedin.com/in/martin-ha-948a08239/">
-                        <img src="images/LI-In-Bug_adobe_express.png"  width="auto" height="32">
-                    </a>
-                </div>
-                <div style = "position: absolute; left: 895px; top: 400px;">
-                    <a href="https://www.instagram.com/mart1n_ha/">
-                        <img src="images/Instagram_Glyph_Gradient copy_adobe_express.png"  width="auto" height="32">
-                    </a>
-                </div>
-            </div>
-            <!----------------Animation Content------------------------>
-    
-            <div class="star">
-                <img src="images/Bright Star.png">
-                <img src="images/Bright Star.png">
-            </div>
-<!--
-      <figure>
-        <span class="img-container">
-            <img src="/images/selfie.jpg" width = "300" height = "400" />
-            <figcaption>Picture of Yours Truly</figcaption>
-        </span>
-      </figure>  
+<!------Contact Content---------------------->
       <form action="/form-handler" method="POST">
         <p>Enter some text here:</p>
         <textarea name="text-input">hello world</textarea>
         <br/>
         <input type="submit" />
       </form>
-      
-      <button onclick="helloWorld();">
-        Say Hello
-      </button>
-      <p id="hello-container"></p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-      -->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
