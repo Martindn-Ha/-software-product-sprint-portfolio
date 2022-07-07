@@ -10,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Safelist;
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
@@ -17,14 +19,18 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    // Get the value entered in the form.
-    String textValue = request.getParameter("text-input");
-    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+    // Sanitize user input to remove HTML tags and JavaScript.
+    String email = Jsoup.clean(request.getParameter("email-input"), Safelist.none());
+    String msg = Jsoup.clean(request.getParameter("msg-input"), Safelist.none());
+    long timestamp = System.currentTimeMillis();
 
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Contact");
     FullEntity taskEntity =
     Entity.newBuilder(keyFactory.newKey())
-        .set("input", textValue)
+        .set("email", email)
+        .set("message", msg)
+        .set("timestamp", timestamp)
         .build();
         datastore.put(taskEntity);
     //Redirect client to front page
