@@ -12,26 +12,31 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
-async function helloWorld() {
-    const responseFromServer = await fetch('/hello');
-    const textFromResponse = await responseFromServer.text();
+/** Fetches tasks from the server and adds them to the DOM. */
+async function loadTasks() {
+    const response = await fetch('/list-tasks');
+    const data = await response.json();
+    document.getElementById('response').innerText = data;
+          
+    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
+      console.log(tasks);  
+      console.log("Hello");
+      const taskListElement = document.getElementById('task-list');
+      tasks.forEach((task) => {
+        taskListElement.appendChild(createTaskElement(task));
+      })
+    });
+  }
   
-    const helloContainer = document.getElementById('hello-container');
-    helloContainer.innerText = textFromResponse;
+  /** Creates an element that represents a task*/
+  function createTaskElement(task) {
+    const taskElement = document.createElement('li');
+    taskElement.className = 'task';
+  
+    const titleElement = document.createElement('span');
+    titleElement.innerText = task.title;
+  
+    taskElement.appendChild(titleElement);
+    return taskElement;
   }
   
