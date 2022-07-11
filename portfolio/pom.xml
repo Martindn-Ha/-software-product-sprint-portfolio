@@ -52,7 +52,14 @@
       <artifactId>google-cloud-datastore</artifactId>
       <version>1.104.0</version>
       </dependency>
-  </dependencies>
+
+     <!-- jsoup -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.14.2</version>
+    </dependency>
+    </dependencies>
 
   <build>
     <plugins>
