@@ -24,20 +24,20 @@ public class FormLoadServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("Contact").setOrderBy(OrderBy.desc("timestamp")).build();
+        Query.newEntityQueryBuilder().setKind("Contact").setOrderBy(OrderBy.asc("timestamp")).build();
     QueryResults<Entity> results = datastore.run(query);
     
     List<Task> tasks = new ArrayList<>();
     while (results.hasNext()) {
-    Entity entity = results.next();
+        Entity entity = results.next();
 
-    long id = entity.getKey().getId();
-    String email = entity.getString("email");
-    String msg = entity.getString("message");
-    long timestamp = entity.getLong("timestamp");
+        long id = entity.getKey().getId();
+        String email = entity.getString("email");
+        String msg = entity.getString("message");
+        long timestamp = entity.getLong("timestamp");
 
-    Task task = new Task(id, email, msg, timestamp);
-      tasks.add(task);
+        Task task = new Task(id, email, msg, timestamp);
+        tasks.add(task);
     }
 
     Gson gson = new Gson();
