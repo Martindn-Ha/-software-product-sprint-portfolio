@@ -14,13 +14,7 @@
 
 /** Fetches tasks from the server and adds them to the DOM. */
 async function loadTasks() {
-    const response = await fetch('/list-tasks');
-    const data = await response.json();
-    document.getElementById('response').innerText = data;
-          
-    fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-      console.log(tasks);  
-      console.log("Hello");
+    fetch('/get-inputs').then(response => response.json()).then((tasks) => {
       const taskListElement = document.getElementById('task-list');
       tasks.forEach((task) => {
         taskListElement.appendChild(createTaskElement(task));
@@ -34,9 +28,8 @@ async function loadTasks() {
     taskElement.className = 'task';
   
     const titleElement = document.createElement('span');
-    titleElement.innerText = task.title;
+    titleElement.innerText = task.msgInput;
   
     taskElement.appendChild(titleElement);
     return taskElement;
   }
-  
