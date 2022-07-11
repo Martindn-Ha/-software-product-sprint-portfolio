@@ -34,6 +34,6 @@ public class FormHandlerServlet extends HttpServlet {
         .build();
         datastore.put(taskEntity);
     //Redirect client to front page
-    response.sendRedirect("https://mha-sps-summer22.wl.r.appspot.com");
+    response.sendRedirect("/contact.html");
   }
 }
